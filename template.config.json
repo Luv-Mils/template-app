@@ -1,0 +1,20 @@
+{
+  "id": "template-app",
+  "name": "App Templates",
+  "version": "1.0.0",
+  "sdk": "1.0",
+  "description": "Full-stack app templates with dashboards, CRUD, auth, and database",
+  "category": "app",
+  "chassis": [
+    "booking",
+    "crm",
+    "project-mgmt",
+    "invoice",
+    "inventory",
+    "ats",
+    "helpdesk",
+    "membership",
+    "content-mgmt",
+    "survey"
+  ]
+}
