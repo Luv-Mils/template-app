@@ -29,4 +29,3 @@ export function getTypography(id: string): TypographyConfig {
 
 // Re-export useTheme from foundation so existing components
 // that import from '../../config/theme' continue to work.
-export { useTheme } from '../shared/foundation';

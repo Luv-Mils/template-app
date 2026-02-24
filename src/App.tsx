@@ -1,6 +1,4 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { ThemeProvider } from './shared/foundation';
-import { Navbar } from './shared/foundation';
 import { getChassisConfig, type ChassisConfig, type NavItem } from './chassis';
 import type { VibeConfig } from './types';
 
