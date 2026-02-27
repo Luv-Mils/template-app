@@ -7,6 +7,8 @@ import { useContent } from '../../../lib/content-loader';
 export default function Dashboard() {
   const [stats, setStats] = useState<(string | number)[]>([0, 0, 0, 0]);
   const [recent, setRecent] = useState<Record<string, unknown>[]>([]);
+  const { section } = useContent();
+  const dashContent = section('dashboard');
 
   useEffect(() => {
     seedDatabase('helpdesk');
