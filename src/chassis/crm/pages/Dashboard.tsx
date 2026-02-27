@@ -5,8 +5,6 @@ import { StatCard, PageHeader } from '../../../components';
 import { useContent } from '../../../lib/content-loader';
 
 export default function Dashboard() {
-  const { section } = useContent();
-  const dashContent = section('dashboard');
   const [stats, setStats] = useState({ contacts: 0, deals: 0, pipeline: 0, wonValue: 0 });
   const { section } = useContent();
   const dashContent = section('dashboard');
