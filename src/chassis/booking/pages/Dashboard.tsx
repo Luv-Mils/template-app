@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { getAll } from '../../../lib/db';
 import { seedDatabase } from '../../../lib/seed';
 import { StatCard, PageHeader } from '../../../components';
+import { useContent } from '../../../lib/content-loader';
 
 export default function Dashboard() {
   const [stats, setStats] = useState({ total: 0, confirmed: 0, pending: 0, clients: 0 });
+  const { section } = useContent();
+  const dashContent = section('dashboard');
   const [recent, setRecent] = useState<Record<string, unknown>[]>([]);
 
   useEffect(() => {
@@ -26,7 +29,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-6">
-      <PageHeader title="Dashboard" subtitle="Overview of your booking activity" />
+      <PageHeader title={dashContent.heading || "Dashboard"} subtitle={dashContent.subheading || "Overview of your booking activity"} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <StatCard label="Total Appointments" value={stats.total} icon="📅" />
         <StatCard label="Confirmed" value={stats.confirmed} icon="✅" trend={{ value: '12%', positive: true }} />

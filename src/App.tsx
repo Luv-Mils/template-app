@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { getChassisConfig, type ChassisConfig, type NavItem } from './chassis';
 import type { VibeConfig } from './types';
+import { useContent } from './lib/content-loader';
 
 // Theme presets
 const THEMES: Record<string, Record<string, string>> = {
@@ -64,6 +65,7 @@ export default function App() {
   const [chassis, setChassis] = useState<ChassisConfig | null>(null);
   const [activePage, setActivePage] = useState('/');
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const { content } = useContent();
 
   useEffect(() => {
     fetch('/vibe.config.json')
@@ -81,6 +83,12 @@ export default function App() {
         applyTheme('midnight', 'modern');
       });
   }, []);
+  useEffect(() => {
+    if (content.businessName && content.businessName !== 'My Business') {
+      document.title = content.businessName;
+    }
+  }, [content.businessName]);
+
 
   if (!chassis) return <LoadingSpinner />;
 
@@ -107,7 +115,7 @@ export default function App() {
           </div>
           {sidebarOpen && (
             <span className="font-heading font-bold text-foreground truncate">
-              {chassis.name}
+              {content.businessName || chassis.name}
             </span>
           )}
         </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAll } from '../../../lib/db';
 import { seedDatabase } from '../../../lib/seed';
 import { StatCard, PageHeader } from '../../../components';
+import { useContent } from '../../../lib/content-loader';
 
 export default function Dashboard() {
   const [stats, setStats] = useState<(string | number)[]>([0, 0, 0, 0]);
@@ -23,7 +24,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-6">
-      <PageHeader title="Dashboard" subtitle="Overview of your invoice manager" />
+      <PageHeader title={dashContent.heading || "Dashboard"} subtitle={dashContent.subheading || "Overview of your invoice manager"} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <StatCard label="Total Revenue" value={stats[0]} icon="💵" trend={{ value: '18%', positive: true }} />
         <StatCard label="Outstanding" value={stats[1]} icon="📨" />

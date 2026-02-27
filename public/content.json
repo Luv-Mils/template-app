@@ -1,0 +1,58 @@
+{
+  "businessName": "Booking Manager",
+  "tagline": "Manage your appointments with ease",
+  "description": "A booking management app for scheduling appointments and managing client bookings.",
+  "sections": {
+    "dashboard": {
+      "heading": "Dashboard",
+      "subheading": "Overview of your booking activity",
+      "items": [
+        {
+          "title": "Total Appointments",
+          "description": "0"
+        },
+        {
+          "title": "Confirmed",
+          "description": "0"
+        },
+        {
+          "title": "Pending",
+          "description": "0"
+        },
+        {
+          "title": "Total Clients",
+          "description": "0"
+        }
+      ]
+    },
+    "services": {
+      "heading": "Our Services",
+      "subheading": "What we offer",
+      "items": [
+        {
+          "title": "Deep Tissue Massage",
+          "description": "Targeted pressure to release deep muscle tension.",
+          "icon": "star"
+        },
+        {
+          "title": "Swedish Massage",
+          "description": "Gentle full-body strokes for relaxation and stress relief.",
+          "icon": "heart"
+        },
+        {
+          "title": "Hot Stone Therapy",
+          "description": "Heated stones to melt away tension and improve circulation.",
+          "icon": "zap"
+        }
+      ]
+    },
+    "branding": {
+      "heading": "Booking Manager",
+      "subheading": "Professional appointment scheduling"
+    }
+  },
+  "meta": {
+    "title": "Booking Manager",
+    "description": "Easily manage bookings, appointments, and client schedules."
+  }
+}
